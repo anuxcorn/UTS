@@ -1,0 +1,40 @@
+public class Mahasiswa {
+    String Nama, NIM;
+    Boolean JenisKelamin;
+  
+    public Mahasiswa(String Nama, String NIM, Boolean JenisKelamin) {
+        this.Nama = nama;
+        this.NIM = NIM;
+        this.JenisKelamin = JenisKelamin;
+    }
+  
+    public String getNama() {
+        return this.Nama;
+    }
+  
+    public void setNama(String Nama) {
+        this.Nama = Nama;
+    }
+  
+    public String getNIM() {
+        return this.NIM;
+    }
+  
+    public void setNIM(String NIM) {
+        this.NIM = NIM;
+    }
+  
+    public Boolean getJenisKelamin() {
+        return this.JenisKelamin;
+    }
+  
+    public void setJenisKelamin(Boolean JenisKelamin) {
+        this.JenisKelamin = JenisKelamin;
+    }
+  
+    @Override
+    public String toString() {
+        return "" + " " + getNama() + "\t\t" + " " + getNIM() + "\t\t" + " " + (getJenisKelamin() == true ? "Laki-laki" : "Perempuan");
+    }
+  
+}
