@@ -1,0 +1,62 @@
+import java.util.ArrayList;
+
+public class KartuHasilStudi {
+    Mahasiswa Mahasiswa;
+    Integer Semester;
+    ArrayList<NilaiStudi> ListNilaiStudi = new ArrayList<NilaiStudi>();
+
+    public KartuHasilStudi(Mahasiswa Mahasiswa, Integer Semester) {
+        this.Mahasiswa = Mahasiswa;
+        this.Semester = Semester;
+    }
+    
+    public Mahasiswa getMahasiswa() {
+        return this.Mahasiswa;
+    }
+    
+    public Integer getSemester() {
+        return this.Semester;
+    }
+    
+    public Integer hitungTotalSks() {
+        Integer totalsks = 0;
+        for (int i = 0; i < this.listNilaiStudi.size(); i++) {
+            totalsks += this.ListNilaiStudi.get(i).getMatkul().getsks();
+        }
+        return totalsks;
+    }
+
+    public Double getIPK() {
+        Double result = 0.0;
+        Integer totalsks = hitungtotalsks();
+
+        for (int i = 0; i < this.ListNilaiStudi.size(); i++) {
+            result += (this.ListNilaiStudi.get(i).getNilaiAngka() * this.ListNilaiStudi.get(i).getMatkul().getsks()) / totalsks;
+        }
+        return result;
+    }
+
+    public void tampilkanKHS() {
+        Integer totalsks = hitungtotalsks();
+
+        System.out.println("Nama Mahasiswa\t: " + this.Mahasiswa.getNama());
+        System.out.println("Semester\t\t: " + this.Semester);
+        System.out.printf("IPK\t\t\t: %.2f\n", getIPK());
+        System.out.println("Total SKS\t\t: " + totalsks + "\n");
+        System.out.println("Nilai : ");
+        System.out.println("\tNo.\t\tKode Matkul\t\tNama Matkul\t\tsks\t\tNilai");
+        for (int i = 0; i < ListNilaiStudi.size(); i++) {
+            System.out.printf(" \n", i+1,
+            this.ListNilaiStudi.get(i).getMatkul().getNamaMatkul(),
+            this.ListNilaiStudi.get(i).getMatkul().getKodeMatkul(),
+            this.ListNilaiStudi.get(i).getMatkul().getsks(),
+            this.ListNilaiStudi.get(i).NilaiHuruf);
+        }
+    }
+
+    public void tambahNilai(Matkul Matkul, char NilaiHuruf) {
+        NilaiStudi NilaiMatkul = new NilaiStudi(Matkul, NilaiHuruf);
+        this.ListNilaiStudi.add(NilaiMatkul);
+    }
+    
+}
