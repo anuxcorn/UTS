@@ -1,0 +1,24 @@
+public class Matkul {
+    String NamaMatkul;
+    String KodeMatkul;
+    Integer sks;
+  
+    public Matkul(String NamaMatkul, String KodeMatkul, Integer sks ) {
+        this.NamaMatkul = NamaMatkul;
+        this.KodeMatkul = KodeMatkul;
+        this.sks = sks;
+    }
+  
+    public String getNamaMatkul() {
+        return this.NamaMatkul;
+    }
+  
+    public String getKodeMatkul() {
+        return this.kodeMatkul;
+    }
+  
+    public Integer getsks() {
+        return this.sks;
+    }
+  
+}
