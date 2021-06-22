@@ -1,0 +1,17 @@
+class Main {
+    /* 
+        Nama : William
+        NIM : 03082200017
+    */
+    public static void main(String[] args) {
+        Mahasiswa Mahasiswa = new Mahasiswa("William", "03082200017", true);
+        Matakuliah Matkul1 = new Matakuliah("Filsafat Ilmu Pengetahuan", "ABC123", 1);
+        Matakuliah Matkul2 = new Matakuliah("Pemrograman Berorientasi Objek", "DEF456", 2);
+        Matakuliah Matkul3 = new Matakuliah("Bahasa Indonesia", "GHI789", 3);
+        KartuHasilStudi KHS = new KartuHasilStudi(Mahasiswa, 4);
+        KHS.tambahNilai(Matkul1, 'A');
+        KHS.tambahNilai(Matkul2, 'B');
+        KHS.tambahNilai(Matkul3, 'C');
+        KHS.tampilkanKHS();
+    }
+}
